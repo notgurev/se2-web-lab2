@@ -24,15 +24,15 @@
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="-4"> -4
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="-3"> -3
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="-2"> -2
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="-1"> -1
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="0"> 0
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="1"> 1
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="2"> 2
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="3"> 3
-                        <input name="x" class="X_checkbox" type="checkbox" onclick="changeX(this)" value="4"> 4
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="-4"> -4
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="-3"> -3
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="-2"> -2
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="-1"> -1
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="0"> 0
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="1"> 1
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="2"> 2
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="3"> 3
+                        <input name="x" type="checkbox" onclick="changeX(this)" value="4"> 4
                     </div>
                 </div>
                 <div id="y_input_block">
@@ -44,11 +44,11 @@
                 <div id="r_input_block">
                     <div class="checkbox_block">
                         <label>R: </label>
-                        <input name="r" class="R_checkbox" type="checkbox" onclick="changeR(this)" value="1"> 1
-                        <input name="r" class="R_checkbox" type="checkbox" onclick="changeR(this)" value="1.5"> 1.5
-                        <input name="r" class="R_checkbox" type="checkbox" onclick="changeR(this)" value="2"> 2
-                        <input name="r" class="R_checkbox" type="checkbox" onclick="changeR(this)" value="2.5"> 2.5
-                        <input name="r" class="R_checkbox" type="checkbox" onclick="changeR(this)" value="3"> 3
+                        <input name="r" type="checkbox" onclick="changeR(this)" value="1"> 1
+                        <input name="r" type="checkbox" onclick="changeR(this)" value="2"> 2
+                        <input name="r" type="checkbox" onclick="changeR(this)" value="3"> 3
+                        <input name="r" type="checkbox" onclick="changeR(this)" value="4"> 4
+                        <input name="r" type="checkbox" onclick="changeR(this)" value="5"> 5
                     </div>
                 </div>
                 <button class="special_button" disabled id="submit_button" type="submit">
