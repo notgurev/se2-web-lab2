@@ -63,6 +63,11 @@ body {
     margin-bottom: 30px;
 }
 
+.content > h3 {
+    text-align: center;
+    font-family: Arial, serif;
+}
+
 .content_block > h1 {
     text-align: center;
     font-size: 25px;

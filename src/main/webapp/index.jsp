@@ -16,11 +16,13 @@
 <body>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
+    <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>
     <div id="content_blocks">
         <div class="content_block" id="graph-picture"></div>
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
-            <form class="input_form" id="values_selection">
+            <form class="input_form" id="values_selection" method="post"
+                  action="${pageContext.request.contextPath}/controller"> <!--почему-то ругается-->
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>
