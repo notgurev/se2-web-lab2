@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="results" scope="session" class="lab2.beans.ResultsBean"/>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -45,6 +46,15 @@
                 </thead>
                 <tbody>
                     <!-- вывести в цикле -->
+                    <c:forEach var="result" items="${results.results}">
+                        <tr>
+                            <td>${result.x}</td>
+                            <td>${result.y}</td>
+                            <td>${result.radius}</td>
+                            <td>${result.successful ? "<span class='successful'>Попадание</span>"
+                                    : "<span class='missed'>Мимо</span>"}</td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
