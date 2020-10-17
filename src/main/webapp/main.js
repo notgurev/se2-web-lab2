@@ -1,6 +1,6 @@
 let submitButton;
-let Xs_checked = 0;
-let Rs_checked = 0;
+let checked_x;
+let checked_r;
 
 function updateSubmitButton(yIsCheckedAndCorrect = false) {
     if (submitButton === undefined) {
@@ -8,23 +8,34 @@ function updateSubmitButton(yIsCheckedAndCorrect = false) {
     } else {
         // check x, y, z
         submitButton.disabled = !(
-            Xs_checked > 0
-            && Rs_checked > 0
+            checked_x !== undefined
+            && checked_r !== undefined
             && (yIsCheckedAndCorrect || validateY(document.getElementById('Y')))
         );
     }
 }
 
-// todo changeX/R - тупо, надо сделать через jQuery (когда-нибудь точно получится)
 function changeX(element) {
-    if (element.checked) Xs_checked++;
-    else Xs_checked--;
+    if (element.checked) {
+        if (checked_x !== undefined) {
+            checked_x.checked = false;
+        }
+        checked_x = element;
+    } else {
+        checked_x = undefined;
+    }
     updateSubmitButton();
 }
 
 function changeR(element) {
-    if (element.checked) Rs_checked++;
-    else Rs_checked--;
+    if (element.checked) {
+        if (checked_r !== undefined) {
+            checked_r.checked = false;
+        }
+        checked_r = element;
+    } else {
+        checked_r = undefined;
+    }
     updateSubmitButton();
 }
 
