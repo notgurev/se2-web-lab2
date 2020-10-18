@@ -216,6 +216,6 @@ span.missed {
     color: red;
 }
 
-#graph {
+#foreground-canvas, #background-canvas, #graph-picture {
     cursor: not-allowed;
 }
