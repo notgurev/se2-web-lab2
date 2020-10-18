@@ -67,4 +67,5 @@
         Сентябрь, 2020
     </div>
 </footer>
+<script src="canvas.js"></script>
 </html>

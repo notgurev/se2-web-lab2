@@ -124,8 +124,8 @@ footer {
 
 #graph-picture {
     background: url("resources/areas.png");
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     background-size: cover;
 }
 
@@ -206,4 +206,8 @@ span.successful {
 
 span.missed {
     color: red;
+}
+
+#graph {
+    cursor: not-allowed;
 }

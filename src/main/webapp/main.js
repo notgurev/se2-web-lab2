@@ -1,6 +1,7 @@
 let submitButton;
 let checked_x;
 let checked_r;
+let graph = document.getElementById("graph");
 
 function updateSubmitButton(yIsCheckedAndCorrect = false) {
     if (submitButton === undefined) {
@@ -33,8 +34,10 @@ function changeR(element) {
             checked_r.checked = false;
         }
         checked_r = element;
+        graph.style.cursor = "crosshair";
     } else {
         checked_r = undefined;
+        graph.style.cursor = "not-allowed";
     }
     updateSubmitButton();
 }

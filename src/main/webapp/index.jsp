@@ -20,7 +20,9 @@
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>
     <div id="content_blocks">
-        <div class="content_block" id="graph-picture"></div>
+        <div class="content_block" id="graph-picture">
+            <canvas id="graph" width="350" height="350"></canvas>
+        </div>
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
             <form class="input_form" id="values_selection" method="post"
@@ -94,4 +96,5 @@
     </div>
 </footer>
 <script src="main.js"></script>
+<script src="canvas.js"></script>
 </html>
