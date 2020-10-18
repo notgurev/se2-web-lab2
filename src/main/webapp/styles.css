@@ -219,3 +219,8 @@ span.missed {
 #foreground-canvas, #background-canvas, #graph-picture {
     cursor: not-allowed;
 }
+
+.r-not-chosen-error {
+    border-color: var(--warning-color);
+    border-style: inset;
+}

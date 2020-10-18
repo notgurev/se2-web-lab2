@@ -1,3 +1,5 @@
+let canvasContainer = document.getElementById("graph-picture");
+
 let backgroundCanvas = document.getElementById("background-canvas");
 let bCtx = backgroundCanvas.getContext("2d");
 
@@ -98,10 +100,34 @@ function drawLetters(context) {
 }
 
 
-//
-// canvas.addEventListener('click', (clickEvent) => {
-//     let x = clickEvent.x;
-//     let y = clickEvent.y;
-//
-//
-// });
+function sendForm(x, y) {
+    console.log("sending form")
+}
+
+foregroundCanvas.addEventListener('click', (e) => {
+    if (checked_r !== undefined) {
+        let scale = checked_r.value / R_OFFSET;
+
+        let canvasX = e.pageX - canvasContainer.offsetLeft;
+        let canvasY = e.pageY - canvasContainer.offsetTop;
+
+        let x = Math.round((canvasX - CANVAS_CENTER_X) * scale);
+        let y = (CANVAS_CENTER_Y - canvasY) * scale;
+
+        sendForm(x, y);
+    } else {
+        rNotChosenError(true);
+    }
+});
+
+function rNotChosenError(enable) {
+    let rInputBlock = document.getElementById("r_input_block");
+    let error = "r-not-chosen-error";
+    if (enable) {
+        canvasContainer.classList.add(error);
+        rInputBlock.classList.add(error);
+    } else {
+        canvasContainer.classList.remove(error);
+        rInputBlock.classList.remove(error);
+    }
+}

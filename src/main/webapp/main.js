@@ -35,7 +35,8 @@ function changeR(element) {
         }
         checked_r = element;
         graph.style.cursor = "crosshair";
-        drawPoints(checked_r.value)
+        drawPoints(checked_r.value);
+        rNotChosenError(false);
     } else {
         checked_r = undefined;
         graph.style.cursor = "not-allowed";
