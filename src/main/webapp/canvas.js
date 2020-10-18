@@ -12,11 +12,12 @@ const R_OFFSET = 200;
 function drawPointOnGraph(x, y, r, successful) {
     fCtx.fillStyle = successful ? "lawngreen" : "red";
     fCtx.strokeStyle = "#000000";
-    fCtx.lineWidth = 2;
+    fCtx.lineWidth = 3;
     fCtx.beginPath();
     fCtx.arc(
         CANVAS_CENTER_X + x * R_OFFSET / r,
         CANVAS_CENTER_Y - y * R_OFFSET / r, 3, 0, 2 * Math.PI);
+    fCtx.stroke();
     fCtx.fill();
     fCtx.closePath();
 }
