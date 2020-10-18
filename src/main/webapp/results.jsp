@@ -48,13 +48,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <!-- вывести в цикле -->
                     <c:forEach var="result" items="${results.results}">
                         <tr>
-                            <td>${result.x}</td>
-                            <td>${result.y}</td>
-                            <td>${result.radius}</td>
-                            <td>${result.successful ? "<span class='successful'>Попадание</span>"
+                            <td class="x-td">${result.x}</td>
+                            <td class="y-td">${result.y}</td>
+                            <td class="r-td">${result.radius}</td>
+                            <td class="success-td">${result.successful ? "<span class='successful'>Попадание</span>"
                                     : "<span class='missed'>Мимо</span>"}</td>
                         </tr>
                     </c:forEach>
@@ -72,6 +71,6 @@
 </footer>
 <script src="canvas.js"></script>
 <script>
-    drawPoints(<%=results.getResults().getFirst().getRadius()%>); // не работает
+    drawPoints(<%=results.getResults().getFirst().getRadius()%>);
 </script>
 </html>
