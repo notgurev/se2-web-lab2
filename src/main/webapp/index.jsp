@@ -21,7 +21,8 @@
     <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>
     <div id="content_blocks">
         <div class="content_block" id="graph-picture">
-            <canvas id="graph" width="350" height="350"></canvas>
+            <canvas id="background-canvas" style="z-index: 0" width="500" height="500"></canvas>
+            <canvas id="foreground-canvas" style="z-index: 1" width="500" height="500"></canvas>
         </div>
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
@@ -76,10 +77,10 @@
                 <tbody>
                 <c:forEach var="result" items="${results.results}">
                     <tr>
-                        <td>${result.x}</td>
-                        <td>${result.y}</td>
-                        <td>${result.radius}</td>
-                        <td>${result.successful ? "<span class='successful'>Попадание</span>"
+                        <td class="x-td">${result.x}</td>
+                        <td class="y-td">${result.y}</td>
+                        <td class="r-td">${result.radius}</td>
+                        <td class="success-td">${result.successful ? "<span class='successful'>Попадание</span>"
                                 : "<span class='missed'>Мимо</span>"}</td>
                     </tr>
                 </c:forEach>
@@ -95,6 +96,6 @@
         Сентябрь, 2020
     </div>
 </footer>
-<script src="main.js"></script>
 <script src="canvas.js"></script>
+<script src="main.js"></script>
 </html>

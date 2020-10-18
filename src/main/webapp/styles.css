@@ -102,6 +102,21 @@ body {
     justify-content: center;
 }
 
+.content_block#graph-picture {
+    position: relative;
+    min-width: 500px;
+    min-height: 500px;
+    height: 500px;
+    width: 500px;
+}
+
+#graph-picture canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
 footer {
     background-color: var(--edges-background-color);
     font-family: Tahoma, serif;
@@ -120,13 +135,6 @@ footer {
  */
 #footer_text {
     text-align: center;
-}
-
-#graph-picture {
-    background: url("resources/areas.png");
-    height: 350px;
-    width: 350px;
-    background-size: cover;
 }
 
 .special_button {

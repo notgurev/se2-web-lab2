@@ -1,7 +1,7 @@
 let submitButton;
 let checked_x;
 let checked_r;
-let graph = document.getElementById("graph");
+let graph = document.getElementById("foreground-canvas");
 
 function updateSubmitButton(yIsCheckedAndCorrect = false) {
     if (submitButton === undefined) {
@@ -35,9 +35,11 @@ function changeR(element) {
         }
         checked_r = element;
         graph.style.cursor = "crosshair";
+        drawPoints(checked_r.value)
     } else {
         checked_r = undefined;
         graph.style.cursor = "not-allowed";
+        drawPoints(null)
     }
     updateSubmitButton();
 }

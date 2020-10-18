@@ -30,7 +30,10 @@
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <div id="content_blocks">
-        <div class="content_block" id="graph-picture"></div>
+        <div class="content_block" id="graph-picture">
+            <canvas id="background-canvas" style="z-index: 0" width="500" height="500"></canvas>
+            <canvas id="foreground-canvas" style="z-index: 1" width="500" height="500"></canvas>
+        </div>
         <div class="content_block" id="get_back_button_block">
             <button class="special_button" onclick="location.href='${pageContext.request.contextPath}/controller'">Вернуться на главную</button>
         </div>
@@ -68,4 +71,7 @@
     </div>
 </footer>
 <script src="canvas.js"></script>
+<script>
+    drawPoints(<%=results.getResults().getFirst().getRadius()%>); // не работает
+</script>
 </html>
