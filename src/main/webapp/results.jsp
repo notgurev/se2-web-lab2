@@ -1,3 +1,5 @@
+<%--suppress HtmlUnknownTarget --%>
+<%@ page import="java.lang.Math" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:useBean id="results" scope="session" class="lab2.beans.ResultsBean"/>
@@ -27,6 +29,11 @@
     </div>
 </header>
 <body>
+<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" name="x" id="x-hidden-input">
+    <input type="hidden" name="y" id="y-hidden-input">
+    <input type="hidden" name="r" id="z-hidden-input" value="<%=Math.round(results.getResults().getFirst().getRadius())%>">
+</form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <div id="content_blocks">
@@ -70,6 +77,7 @@
     </div>
 </footer>
 <script src="canvas.js"></script>
+<script src="main.js"></script>
 <script>
     drawPoints(<%=results.getResults().getFirst().getRadius()%>);
 </script>

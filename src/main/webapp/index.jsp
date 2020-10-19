@@ -1,4 +1,4 @@
-<%--suppress HtmlFormInputWithoutLabel --%>
+<%--suppress ALL --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:useBean id="results" scope="session" class="lab2.beans.ResultsBean"/>
@@ -16,6 +16,11 @@
     </div>
 </header>
 <body>
+<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" id="x-hidden-input" name="x">
+    <input type="hidden" id="y-hidden-input" name="y">
+    <input type="hidden" id="z-hidden-input" name="r">
+</form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>
@@ -27,7 +32,7 @@
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
             <form class="input_form" id="values_selection" method="post"
-                  action="${pageContext.request.contextPath}/controller"> <!--todo почему-то ругается-->
+                  action="${pageContext.request.contextPath}/controller">
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>

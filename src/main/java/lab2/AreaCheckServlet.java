@@ -29,7 +29,7 @@ public class AreaCheckServlet extends HttpServlet {
             ResultsBean resultsBean = (ResultsBean) req.getSession().getAttribute("results");
             checkAndAddResults(resultsBean, req.getParameter("x"), req.getParameter("y"), req.getParameter("r"));
             req.getSession().setAttribute("results", resultsBean);
-            req.getRequestDispatcher("results.jsp").forward(req, resp); // todo почему-то отображается как lab2/controller...
+            req.getRequestDispatcher("results.jsp").forward(req, resp);
         } catch (IllegalArgumentException | NullPointerException e) {
             resp.setStatus(400);
             req.setAttribute("message", "Ошибка: " + e.getMessage());
