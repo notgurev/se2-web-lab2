@@ -6,7 +6,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Первая лаба</title>
+    <title>Вторая лаба</title>
     <link href="resources/lebedev.png" rel="icon" type="image/png">
     <link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
