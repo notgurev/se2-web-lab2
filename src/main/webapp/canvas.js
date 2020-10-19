@@ -10,7 +10,7 @@ let form = document.getElementById("hidden-values");
 
 let x = document.getElementById("x-hidden-input");
 let y = document.getElementById("y-hidden-input");
-let r = document.getElementById("z-hidden-input");
+let r = document.getElementById("r-hidden-input");
 
 const CANVAS_WH = 500;
 const CANVAS_CENTER_X = 250;
@@ -105,13 +105,13 @@ function drawLetters(context) {
     context.strokeText("Y", 250 + TEXT_OFFSET, 15);
 }
 
-
 function sendData(xVal, yVal, rVal) {
     console.log(`sending data with ${xVal}, ${yVal}, ${rVal}`);
-    x.value = xVal;
-    y.value = yVal;
-    r.value = rVal;
-    form.submit();
+    post(contextPath + "/checkPoints", {
+        x: xVal,
+        y: yVal,
+        r: rVal
+    })
 }
 
 foregroundCanvas.addEventListener('click', (e) => {
@@ -141,4 +141,23 @@ function rNotChosenError(enable) {
         canvasContainer.classList.remove(error);
         rInputBlock.classList.remove(error);
     }
+}
+
+function post(path, params, method = 'post') {
+    let form = document.createElement('form');
+    form.method = method;
+    form.action = path;
+
+    for (let key in params) {
+        if (params.hasOwnProperty(key)) {
+            let hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = key;
+            hiddenField.value = params[key];
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
 }

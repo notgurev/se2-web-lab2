@@ -19,7 +19,7 @@
 <form id="hidden-values" method="post" action="${pageContext.request.contextPath}/checkPoints">
     <input type="hidden" id="x-hidden-input" name="x">
     <input type="hidden" id="y-hidden-input" name="y">
-    <input type="hidden" id="z-hidden-input" name="r">
+    <input type="hidden" id="r-hidden-input" name="r">
 </form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
@@ -101,6 +101,7 @@
         Сентябрь, 2020
     </div>
 </footer>
+<script>let contextPath = "${pageContext.request.contextPath}"</script>
 <script src="canvas.js"></script>
 <script src="main.js"></script>
 </html>
