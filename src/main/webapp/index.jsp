@@ -16,11 +16,6 @@
     </div>
 </header>
 <body>
-<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/checkPoints">
-    <input type="hidden" id="x-hidden-input" name="x">
-    <input type="hidden" id="y-hidden-input" name="y">
-    <input type="hidden" id="r-hidden-input" name="r">
-</form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>

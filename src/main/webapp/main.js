@@ -39,7 +39,7 @@ function changeR(element) {
     } else {
         checked_r = undefined;
         foregroundCanvas.style.cursor = "not-allowed";
-        drawPoints(null)
+        erasePoints();
     }
     updateSubmitButton();
 }

@@ -32,11 +32,6 @@
     </div>
 </header>
 <body>
-<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/checkPoints">
-    <input type="hidden" name="x" id="x-hidden-input">
-    <input type="hidden" name="y" id="y-hidden-input">
-    <input type="hidden" name="r" id="r-hidden-input" value="<%=Math.round(results.getResults().getFirst().getRadius())%>">
-</form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <div id="content_blocks">
@@ -79,10 +74,12 @@
         Сентябрь, 2020
     </div>
 </footer>
-<script>let contextPath = "${pageContext.request.contextPath}"</script>
+<script>
+    let contextPath = "${pageContext.request.contextPath}";
+</script>
 <script src="canvas.js"></script>
 <script src="main.js"></script>
 <script>
-    drawPoints(<%=results.getResults().getFirst().getRadius()%>);
+    rResultValue = <%=Math.round(results.getResults().getFirst().getRadius())%>;
 </script>
 </html>

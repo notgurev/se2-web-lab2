@@ -6,11 +6,7 @@ let bCtx = backgroundCanvas.getContext("2d");
 let foregroundCanvas = document.getElementById("foreground-canvas");
 let fCtx = foregroundCanvas.getContext("2d");
 
-let form = document.getElementById("hidden-values");
-
-let x = document.getElementById("x-hidden-input");
-let y = document.getElementById("y-hidden-input");
-let r = document.getElementById("r-hidden-input");
+let rResultValue;
 
 const CANVAS_WH = 500;
 const CANVAS_CENTER_X = 250;
@@ -34,11 +30,11 @@ window.onload = () => {
     drawShapes(bCtx);
     drawCoordsSystem(bCtx);
     drawLetters(bCtx);
+    if (rResultValue !== undefined) drawPoints(rResultValue);
 };
 
 function drawPoints(currentR) {
-    fCtx.clearRect(0, 0, CANVAS_WH, CANVAS_WH);
-    if (currentR == null) return;
+    erasePoints();
     let xs = Array.from(document.getElementsByClassName("x-td")).map(v => v.innerHTML);
     let ys = Array.from(document.getElementsByClassName("y-td")).map(v => v.innerHTML);
     let success = Array.from(document.getElementsByClassName("success-td"))
@@ -46,6 +42,10 @@ function drawPoints(currentR) {
     for (let i = 0; i < xs.length; i++) {
         drawPointOnGraph(xs[i], ys[i], currentR, success[i]);
     }
+}
+
+function erasePoints() {
+    fCtx.clearRect(0, 0, CANVAS_WH, CANVAS_WH);
 }
 
 function drawShapes(context) {
@@ -115,10 +115,10 @@ function sendData(xVal, yVal, rVal) {
 }
 
 foregroundCanvas.addEventListener('click', (e) => {
-    if (checked_r === undefined && r.value === "") {
+    if (checked_r === undefined && rResultValue === undefined) {
         rNotChosenError(true);
     } else {
-        let rValue = checked_r === undefined ? r.value : checked_r.value;
+        let rValue = checked_r === undefined ? rResultValue : checked_r.value;
         let scale = rValue / R_OFFSET;
 
         let canvasX = e.pageX - canvasContainer.offsetLeft;
