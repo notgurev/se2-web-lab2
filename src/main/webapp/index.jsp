@@ -1,4 +1,4 @@
-<%--suppress HtmlFormInputWithoutLabel --%>
+<%--suppress ALL --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:useBean id="results" scope="session" class="lab2.beans.ResultsBean"/>
@@ -16,6 +16,11 @@
     </div>
 </header>
 <body>
+<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" id="x-hidden-input" name="x">
+    <input type="hidden" id="y-hidden-input" name="y">
+    <input type="hidden" id="z-hidden-input" name="r">
+</form>
 <div class="content">
     <h1>Проверка попадания точки в выделенную площадь</h1>
     <%=request.getAttribute("message") != null ? "<h3>" + request.getAttribute("message") + "</h3>" : ""%>
@@ -96,6 +101,7 @@
         Сентябрь, 2020
     </div>
 </footer>
+<script>let contextPath = "${pageContext.request.contextPath}"</script>
 <script src="canvas.js"></script>
 <script src="main.js"></script>
 </html>

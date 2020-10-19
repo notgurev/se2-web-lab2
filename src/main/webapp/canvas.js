@@ -6,6 +6,12 @@ let bCtx = backgroundCanvas.getContext("2d");
 let foregroundCanvas = document.getElementById("foreground-canvas");
 let fCtx = foregroundCanvas.getContext("2d");
 
+let form = document.getElementById("hidden-values");
+
+let x = document.getElementById("x-hidden-input");
+let y = document.getElementById("y-hidden-input");
+let r = document.getElementById("z-hidden-input");
+
 const CANVAS_WH = 500;
 const CANVAS_CENTER_X = 250;
 const CANVAS_CENTER_Y = 250;
@@ -100,13 +106,20 @@ function drawLetters(context) {
 }
 
 
-function sendForm(x, y) {
-    console.log("sending form")
+function sendData(xVal, yVal, rVal) {
+    console.log(`sending data with ${xVal}, ${yVal}, ${rVal}`);
+    x.value = xVal;
+    y.value = yVal;
+    r.value = rVal;
+    form.submit();
 }
 
 foregroundCanvas.addEventListener('click', (e) => {
-    if (checked_r !== undefined) {
-        let scale = checked_r.value / R_OFFSET;
+    if (checked_r === undefined && r.value === "") {
+        rNotChosenError(true);
+    } else {
+        let rValue = checked_r === undefined ? r.value : checked_r.value;
+        let scale = rValue / R_OFFSET;
 
         let canvasX = e.pageX - canvasContainer.offsetLeft;
         let canvasY = e.pageY - canvasContainer.offsetTop;
@@ -114,9 +127,7 @@ foregroundCanvas.addEventListener('click', (e) => {
         let x = Math.round((canvasX - CANVAS_CENTER_X) * scale);
         let y = (CANVAS_CENTER_Y - canvasY) * scale;
 
-        sendForm(x, y);
-    } else {
-        rNotChosenError(true);
+        sendData(x, y, rValue);
     }
 });
 
