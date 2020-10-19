@@ -61,7 +61,6 @@
                 <button class="special_button" disabled id="submit_button" type="submit">
                     Отправить
                 </button>
-                <button class="special_button special_black_button" id="clear_button" type="button">Очистить</button>
             </form>
         </div>
         <div class="content_block" id="results">
