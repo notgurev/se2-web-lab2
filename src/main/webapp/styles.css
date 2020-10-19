@@ -90,6 +90,7 @@ body {
     display: inline-block;
     align-items: center;
     margin: 40px; /* расстояние между блоками */
+    height: fit-content;
 }
 
 .content_block#results {
