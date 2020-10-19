@@ -84,7 +84,7 @@ public class AreaCheckServlet extends HttpServlet {
                 return y < (float) x / 2 + (float) R / 2;
             } else {
                 //  прямоугольник
-                return x >= -R / 2 && y >= R;
+                return x >= -R / 2 && y >= -R;
             }
         }
     }
