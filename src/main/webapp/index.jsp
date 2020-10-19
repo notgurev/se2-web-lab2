@@ -16,7 +16,7 @@
     </div>
 </header>
 <body>
-<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/controller">
+<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/checkPoints">
     <input type="hidden" id="x-hidden-input" name="x">
     <input type="hidden" id="y-hidden-input" name="y">
     <input type="hidden" id="z-hidden-input" name="r">
@@ -32,7 +32,7 @@
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
             <form class="input_form" id="values_selection" method="post"
-                  action="${pageContext.request.contextPath}/controller">
+                  action="${pageContext.request.contextPath}/checkPoints">
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>

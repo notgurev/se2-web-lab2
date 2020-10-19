@@ -21,6 +21,9 @@
             justify-content: center;
             height: fit-content;
         }
+        #foreground-canvas, #background-canvas, #graph-picture {
+            cursor: crosshair;
+        }
     </style>
 </head>
 <header>
@@ -29,7 +32,7 @@
     </div>
 </header>
 <body>
-<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/controller">
+<form id="hidden-values" method="post" action="${pageContext.request.contextPath}/checkPoints">
     <input type="hidden" name="x" id="x-hidden-input">
     <input type="hidden" name="y" id="y-hidden-input">
     <input type="hidden" name="r" id="z-hidden-input" value="<%=Math.round(results.getResults().getFirst().getRadius())%>">
@@ -42,7 +45,7 @@
             <canvas id="foreground-canvas" style="z-index: 1" width="500" height="500"></canvas>
         </div>
         <div class="content_block" id="get_back_button_block">
-            <button class="special_button" onclick="location.href='${pageContext.request.contextPath}/controller'">Вернуться на главную</button>
+            <button class="special_button" onclick="location.href='${pageContext.request.contextPath}/checkPoints'">Вернуться на главную</button>
         </div>
         <div class="content_block" id="results">
             <table id="results_table">
